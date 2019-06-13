@@ -30,7 +30,7 @@ function createForm(arrObjField) {
 
     //Submit button
     dSubmit.setAttribute('type', 'submit');
-    dSubmit.setAttribute('value', 'Submit');
+    dSubmit.setAttribute('value', 'Enviar');
     dSubmit.setAttribute('class', 'btn btn-primary');
     dForm.appendChild(dSubmit);
 
