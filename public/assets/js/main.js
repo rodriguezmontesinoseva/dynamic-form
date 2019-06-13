@@ -16,6 +16,12 @@ const fieldsForm = [
         required: true
     },
     {
+        type: 'email',
+        name: "emailAddress",
+        id: "campo_mail",
+        required: true
+    },
+    {
         type: "text",
         name: "phone",
         id: "campo_telefono",
@@ -26,15 +32,20 @@ const fieldsForm = [
 
 
 function createForm(arrObjField) {
-    console.log('entra en la funcion')
 
-    var dForm = document.createElement("form");
+    const dForm = document.createElement("form");
     dForm.setAttribute('method', "post");
     dForm.setAttribute('class', "main-form");
 
-
+    // recorrer array de objetos, pintando inputs
     arrObjField.map(item => {
-        var dInput = document.createElement("input"); //input element, text
+
+        const dLabel = document.createElement("label");
+        dLabel.setAttribute('for', item.name);
+        const labelContent = document.createTextNode(item.id);
+        dLabel.appendChild(labelContent);
+
+        const dInput = document.createElement("input"); //input element, text
 
 
         dInput.setAttribute('type', item.type);
@@ -42,7 +53,10 @@ function createForm(arrObjField) {
         dInput.setAttribute('id', item.id);
         dInput.setAttribute('required', item.required);
 
+        console.log(dForm.appendChild(dInput));
+
         dForm.appendChild(dInput);
+        dForm.appendChild(dLabel);
 
     });
 
@@ -51,10 +65,7 @@ function createForm(arrObjField) {
     dSubmit.setAttribute('type', "submit");
     dSubmit.setAttribute('value', "Submit");
 
-    // dForm.appendChild(dInput);
     dForm.appendChild(dSubmit);
-
-    // console.log(dInput);
 
 
     const main = document.querySelector('.column-center');
