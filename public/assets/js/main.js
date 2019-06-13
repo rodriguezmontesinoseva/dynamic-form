@@ -76,7 +76,7 @@ const fieldsFormCar = [
         required: true
     },
     {
-        type: 'number',
+        type: 'text',
         name: 'license',
         id: 'Matrícula',
         required: true
