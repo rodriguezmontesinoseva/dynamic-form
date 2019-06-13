@@ -2,36 +2,47 @@
 
 console.log('>> Ready :)');
 
-// // me genera un input
-// const newInput = document.createElement('input');
-// //const newContent = document.createTextNode('Add to favourites');
-// newInput.appendChild(newContent);
-
-// // me pinta un input
-// const dForm = document.querySelector('.main-form');
-// dForm.appendChild(newInput);
-
-var dForm = document.createElement("form");
-dForm.setAttribute('method', "post");
-dForm.setAttribute('class', "main-form");
-
-var i = document.createElement("input"); //input element, text
-i.setAttribute('type', "text");
-i.setAttribute('name', "username");
-
-var s = document.createElement("input"); //input element, Submit button
-s.setAttribute('type', "submit");
-s.setAttribute('value', "Submit");
-
-dForm.appendChild(i);
-dForm.appendChild(s);
+const obj01 = {
+    type: "text",
+    name: "phone",
+    id: "campo_telefono",
+    required: true
+};
 
 
+function createForm(obj01) {
 
-//and some more input elements here
-//and dont forget to add a submit button
+    var dForm = document.createElement("form");
+    dForm.setAttribute('method', "post");
+    dForm.setAttribute('class', "main-form");
 
-//document.getElementsByTagName('body')[0].appendChild(dForm);
+    var dInput = document.createElement("input"); //input element, text
+    dInput.setAttribute('type', obj01.type);
+    dInput.setAttribute('name', obj01.name);
+    dInput.setAttribute('id', obj01.id);
+    dInput.setAttribute('required', obj01.required);
 
-const main = document.querySelector('.column-center');
-main.appendChild(dForm);
+
+    var dSubmit = document.createElement("input"); //input element, Submit button
+    dSubmit.setAttribute('type', "submit");
+    dSubmit.setAttribute('value', "Submit");
+
+    dForm.appendChild(dInput);
+    dForm.appendChild(dSubmit);
+
+    console.log(dInput);
+
+
+    const main = document.querySelector('.column-center');
+    main.appendChild(dForm);
+
+
+
+};
+
+function correctlyForm() {
+    console.log('formulario creado correctamente');
+    alert('El formulario se ha creado correctamente');
+}
+
+createForm(obj01, correctlyForm());
