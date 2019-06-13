@@ -18,7 +18,6 @@
   "js": {
     "src": [
       "_src/assets/js/createForm.js",
-      "_src/assets/js/correctlyForm.js",
       "_src/assets/js/main.js"
     ],
     "dest": "public/assets/js/",

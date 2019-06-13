@@ -39,9 +39,6 @@ function createForm(arrObjField) {
 };
 
 
-function correctlyForm() {
-    alert('El formulario se ha creado correctamente');
-}
 'use strict';
 
 const fieldsForm = [
@@ -65,7 +62,39 @@ const fieldsForm = [
     },
 ];
 
+const fieldsFormCar = [
+    {
+        type: 'text',
+        name: 'brand',
+        id: 'Marca',
+        required: true
+    },
+    {
+        type: 'text',
+        name: 'model',
+        id: 'Modelo',
+        required: true
+    },
+    {
+        type: 'text',
+        name: 'license',
+        id: 'Matrícula',
+        required: true
+    },
+    {
+        type: 'text',
+        name: 'color',
+        id: 'Color',
+        required: true
+    },
+];
+
+function correctlyForm() {
+    console.log('El formulario se ha creado correctamente');
+}
+
 createForm(fieldsForm, correctlyForm());
+createForm(fieldsFormCar);
 
 
 
