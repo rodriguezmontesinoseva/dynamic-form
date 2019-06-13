@@ -20,11 +20,12 @@ function createForm(arrObjField) {
         dInput.setAttribute('name', item.name);
         dInput.setAttribute('id', item.id);
         dInput.setAttribute('required', item.required);
+        dInput.setAttribute('class', 'form-control')
 
         console.log(dForm.appendChild(dInput));
 
-        dForm.appendChild(dInput);
         dForm.appendChild(dLabel);
+        dForm.appendChild(dInput);
 
     });
 
@@ -32,6 +33,7 @@ function createForm(arrObjField) {
     const dSubmit = document.createElement("input");
     dSubmit.setAttribute('type', "submit");
     dSubmit.setAttribute('value', "Submit");
+    dSubmit.setAttribute('class', 'btn btn-primary');
 
     dForm.appendChild(dSubmit);
 

@@ -1,6 +1,6 @@
-body {
-  background: url("../images/logo-adalab-80px.png") center center no-repeat #f3f4f5;
-  height: 100vh;
+.column-center {
+  width: 30%;
+  margin: 50px auto;
 }
 
 /*# sourceMappingURL=main.css.map */
