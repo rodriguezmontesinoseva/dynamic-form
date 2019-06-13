@@ -1,12 +1,57 @@
 'use strict';
 
+
+function createForm(arrObjField) {
+
+    const dForm = document.createElement("form");
+    dForm.setAttribute('method', "post");
+    dForm.setAttribute('class', "main-form");
+
+    // browse array and create elements input y label
+    arrObjField.map(item => {
+
+        const dLabel = document.createElement("label");
+        const labelContent = document.createTextNode(item.id);
+        const dInput = document.createElement("input");
+
+        dLabel.setAttribute('for', item.name);
+        dLabel.appendChild(labelContent);
+
+        dInput.setAttribute('type', item.type);
+        dInput.setAttribute('name', item.name);
+        dInput.setAttribute('id', item.id);
+        dInput.setAttribute('required', item.required);
+
+        console.log(dForm.appendChild(dInput));
+
+        dForm.appendChild(dInput);
+        dForm.appendChild(dLabel);
+
+    });
+
+    //Submit button
+    const dSubmit = document.createElement("input");
+    dSubmit.setAttribute('type', "submit");
+    dSubmit.setAttribute('value', "Submit");
+
+    dForm.appendChild(dSubmit);
+
+    //Add elements to form
+    const main = document.querySelector('.column-center');
+    main.appendChild(dForm);
+
+};
+
 console.log('>> Ready :)wwwww');
 // 'use strict';
 
-console.log('>> Ready :)');
-
 
 // hacer test unitario
+
+//sacar objeto a js
+//sacar funcion a js
+//maquetar
+//hacer test unitario
 
 const fieldsForm = [
     {
@@ -22,7 +67,7 @@ const fieldsForm = [
         required: true
     },
     {
-        type: "text",
+        type: "number",
         name: "phone",
         id: "campo_telefono",
         required: true
@@ -31,46 +76,7 @@ const fieldsForm = [
 ];
 
 
-function createForm(arrObjField) {
 
-    const dForm = document.createElement("form");
-    dForm.setAttribute('method', "post");
-    dForm.setAttribute('class', "main-form");
-
-    // recorrer array de objetos, pintando inputs
-    arrObjField.map(item => {
-
-        const dLabel = document.createElement("label");
-        dLabel.setAttribute('for', item.name);
-        const labelContent = document.createTextNode(item.id);
-        dLabel.appendChild(labelContent);
-
-        const dInput = document.createElement("input"); //input element, text
-
-
-        dInput.setAttribute('type', item.type);
-        dInput.setAttribute('name', item.name);
-        dInput.setAttribute('id', item.id);
-        dInput.setAttribute('required', item.required);
-
-        console.log(dForm.appendChild(dInput));
-
-        dForm.appendChild(dInput);
-        dForm.appendChild(dLabel);
-
-    });
-
-
-    var dSubmit = document.createElement("input"); //input element, Submit button
-    dSubmit.setAttribute('type', "submit");
-    dSubmit.setAttribute('value', "Submit");
-
-    dForm.appendChild(dSubmit);
-
-
-    const main = document.querySelector('.column-center');
-    main.appendChild(dForm);
-};
 
 
 
