@@ -1,6 +1,5 @@
 'use strict';
 
-
 function createForm(arrObjField) {
 
     const dForm = document.createElement("form");
@@ -43,6 +42,10 @@ function createForm(arrObjField) {
 };
 
 console.log('>> Ready :)wwwww');
+function correctlyForm() {
+    console.log('formulario creado correctamente');
+    alert('El formulario se ha creado correctamente');
+}
 // 'use strict';
 
 
@@ -74,19 +77,6 @@ const fieldsForm = [
     },
 
 ];
-
-
-
-
-
-
-
-function correctlyForm() {
-    console.log('formulario creado correctamente');
-    alert('El formulario se ha creado correctamente');
-}
-
-
 
 createForm(fieldsForm, correctlyForm());
 

@@ -1,6 +1,5 @@
 'use strict';
 
-
 function createForm(arrObjField) {
 
     const dForm = document.createElement("form");
